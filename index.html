@@ -1,1634 +1,1274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md Deluair Hossen, Ph.D. | Economist & Data Strategist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #34495e;
-            --text-color: #333;
-            --light-text: #7f8c8d;
-            --transition: all 0.3s ease-in-out;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: #f9f9f9;
-        }
-        
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        a:hover {
-            color: var(--accent-color);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-            font-size: 16px;
-        }
-        
-        .btn:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--secondary-color);
-            color: var(--secondary-color);
-        }
-        
-        .btn-outline:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-        
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 100;
-            transition: var(--transition);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--primary-color);
-            font-weight: 500;
-            position: relative;
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
-            display: flex;
-            align-items: center;
-            color: white;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .scroll-down {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 24px;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-20px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-        }
-        
-        /* About Section */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--primary-color);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: var(--secondary-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-        }
-        
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-            max-width: 400px;
-        }
-        
-        .about-img img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-text {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .about-text h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-        }
-        
-        .competencies {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .competency {
-            background: var(--light-color);
-            color: var(--dark-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-        
-        .timeline-item {
-            position: relative;
-            width: 50%;
-            padding: 20px 40px;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: white;
-            top: 20px;
-            transform: rotate(45deg);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            right: -10px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::after {
-            left: -10px;
-        }
-        
-        .timeline-date {
-            background: var(--secondary-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 14px;
-            position: absolute;
-            top: 20px;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-date {
-            right: -150px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-date {
-            left: -150px;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: var(--secondary-color);
-            border-radius: 50%;
-            top: 25px;
-            z-index: 10;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-dot {
-            right: -8px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -8px;
-        }
-        
-        .timeline-content h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: var(--primary-color);
-        }
-        
-        .timeline-content h4 {
-            margin-bottom: 15px;
-            font-size: 16px;
-            color: var(--light-text);
-        }
-        
-        .timeline-content ul {
-            list-style-type: none;
-            margin-top: 15px;
-        }
-        
-        .timeline-content ul li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-        
-        .timeline-content ul li:before {
-            content: '•';
-            color: var(--secondary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Education Section */
-        .education-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-        
-        .education-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            min-width: 300px;
-            max-width: 380px;
-            transition: var(--transition);
-        }
-        
-        .education-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-        
-        .education-card-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 20px;
-        }
-        
-        .education-card-header h3 {
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-        
-        .education-card-header p {
-            opacity: 0.9;
-            font-size: 14px;
-        }
-        
-        .education-card-body {
-            padding: 20px;
-        }
-        
-        .education-card-body h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        
-        .education-card-body p {
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        
-        .education-year {
-            background: var(--secondary-color);
-            color: white;
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            margin-bottom: 15px;
-        }
-        
-        /* Skills Section */
-        .skills-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .skills-category {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .skills-category h3 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--light-color);
-            padding-bottom: 10px;
-        }
-        
-        .skills-list {
-            list-style-type: none;
-        }
-        
-        .skills-list li {
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .skill-name {
-            font-weight: 500;
-        }
-        
-        .skill-bar {
-            width: 70%;
-            height: 8px;
-            background: var(--light-color);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background: var(--secondary-color);
-            border-radius: 4px;
-        }
-        
-        /* Publications Section */
-        .publications-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .publication-card {
-            background: white;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-        
-        .publication-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .publication-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .publication-authors {
-            color: var(--light-text);
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        
-        .publication-journal {
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        .publication-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .publication-tag {
-            background: var(--light-color);
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            color: var(--primary-color);
-        }
-        
-        /* Presentations Section */
-        .presentations-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .presentation-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            flex: 1;
-            min-width: 300px;
-            max-width: 380px;
-        }
-        
-        .presentation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .presentation-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .presentation-event {
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        .presentation-date {
-            color: var(--light-text);
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        
-        .contact-details {
-            list-style-type: none;
-        }
-        
-        .contact-details li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-details li i {
-            margin-right: 15px;
-            color: var(--secondary-color);
-            font-size: 18px;
-            width: 24px;
-            text-align: center;
-        }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-form h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            border-color: var(--secondary-color);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
-        }
-        
-        textarea.form-control {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 24px;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary-color);
-            transform: translateY(-5px);
-        }
-        
-        .footer-text {
-            opacity: 0.9;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 991px) {
-            .timeline::after {
-                left: 40px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 80px;
-                padding-right: 20px;
-            }
-            
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-content::after {
-                display: none;
-            }
-            
-            .timeline-date {
-                position: relative;
-                top: 0;
-                margin-bottom: 10px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-date,
-            .timeline-item:nth-child(even) .timeline-date {
-                left: 0;
-                right: auto;
-            }
-            
-            .timeline-dot {
-                left: 40px;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-dot,
-            .timeline-item:nth-child(even) .timeline-dot {
-                left: 40px;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                position: relative;
-            }
-            
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                right: 0;
-                flex-direction: column;
-                background: white;
-                width: 200px;
-                border-radius: 5px;
-                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(20px);
-                transition: var(--transition);
-            }
-            
-            .nav-links.active {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-            
-            .nav-links li {
-                margin: 0 0 15px 0;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 36px;
-            }
-            
-            .hero p {
-                font-size: 18px;
-            }
-            
-            .section-title h2 {
-                font-size: 28px;
-            }
-        }
-        
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 100;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: var(--transition);
-        }
-        
-        .dark-mode-toggle:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .dark-mode {
-            --primary-color: #1a2530;
-            --secondary-color: #2980b9;
-            --accent-color: #e74c3c;
-            --light-color: #2c3e50;
-            --dark-color: #1a2530;
-            --text-color: #ecf0f1;
-            --light-text: #bdc3c7;
-            
-            background: #121212;
-        }
-        
-        .dark-mode .header {
-            background: rgba(18, 18, 18, 0.95);
-        }
-        
-        .dark-mode .logo {
-            color: var(--text-color);
-        }
-        
-        .dark-mode .nav-links a {
-            color: var(--text-color);
-        }
-        
-        .dark-mode .timeline-content,
-        .dark-mode .education-card,
-        .dark-mode .publication-card,
-        .dark-mode .presentation-card {
-            background: #1e1e1e;
-            color: var(--text-color);
-        }
-        
-        .dark-mode .timeline-content::after {
-            background: #1e1e1e;
-        }
-        
-        .dark-mode .competency,
-        .dark-mode .publication-tag {
-            background: var(--light-color);
-            color: var(--text-color);
-        }
-        
-        .dark-mode .form-control {
-            background: #1e1e1e;
-            border-color: #333;
-            color: var(--text-color);
-        }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--secondary-color);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 100;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Md Deluair Hossen, Ph.D. — Computational Economist & AI Engineer</title>
+<meta name="description" content="I build simulations and AI systems that turn complex economic, climate, and policy data into decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0f1a;
+    --bg-secondary: #111827;
+    --bg-card: #1a2236;
+    --bg-card-hover: #212d47;
+    --accent: #0ef0c2;
+    --accent-dim: rgba(14, 240, 194, 0.15);
+    --accent-glow: rgba(14, 240, 194, 0.3);
+    --text-primary: #e8edf5;
+    --text-secondary: #8899b4;
+    --text-dim: #556680;
+    --border: #1e2d4a;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+  body {
+    font-family: var(--font-serif);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* === NOISE TEXTURE OVERLAY === */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  /* === GRID BACKGROUND === */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.15;
+    mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 70%);
+  }
+
+  .page-wrapper { position: relative; z-index: 1; }
+
+  /* === NAVIGATION === */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 2rem;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(10, 15, 26, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  /* === HERO === */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 2rem 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-content { max-width: 800px; }
+
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  .hero-tag::before {
+    content: '// ';
+    color: var(--text-dim);
+  }
+
+  .hero h1 {
+    font-family: var(--font-mono);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+  }
+
+  .hero h1 .accent { color: var(--accent); }
+
+  .hero-description {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.6s;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 0.8s;
+  }
+
+  .btn-primary {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.9rem 2rem;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.9rem 2rem;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .stat-item .stat-number {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+
+  .stat-item .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+  }
+
+  /* === SECTIONS === */
+  section {
+    padding: 100px 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+  }
+
+  .section-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .section-tag::before {
+    content: '/// ';
+    color: var(--text-dim);
+  }
+
+  .section-title {
+    font-family: var(--font-mono);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-top: 1rem;
+    max-width: 600px;
+  }
+
+  /* === SERVICES === */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .service-card:hover {
+    border-color: rgba(14, 240, 194, 0.3);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--accent-dim);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    background: var(--accent-dim);
+  }
+
+  .service-card h3 {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .service-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* === PROJECTS === */
+  .projects-filter {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .filter-btn.active,
+  .filter-btn:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    position: relative;
+  }
+
+  .project-card:hover {
+    border-color: rgba(14, 240, 194, 0.3);
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .project-card .project-domain {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-card h3 {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .project-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .project-link-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: var(--text-dim);
+    transition: color 0.3s;
+    font-size: 0.9rem;
+  }
+
+  .project-card:hover .project-link-icon { color: var(--accent); }
+
+  .projects-more {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  /* === CREDENTIALS === */
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .credential-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .credential-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.3;
+  }
+
+  .credential-card .cred-period {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+  }
+
+  .credential-card h3 {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .credential-card .cred-org {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .credential-card .cred-detail {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* === TECH === */
+  .tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .tech-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    transition: all 0.3s;
+  }
+
+  .tech-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  /* === CONTACT === */
+  .contact-section {
+    text-align: center;
+    padding: 100px 2rem 120px;
+  }
+
+  .contact-section .section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-section .section-subtitle {
+    text-align: center;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+    transform: translateY(-2px);
+  }
+
+  .contact-link svg { width: 16px; height: 16px; }
+
+  /* === FOOTER === */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* === SCROLLBAR === */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+  /* === MOBILE === */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(10, 15, 26, 0.97);
+      backdrop-filter: blur(20px);
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1.2rem;
+    }
+    .nav-menu-btn { display: block; }
+    .hero-stats { flex-wrap: wrap; gap: 2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 1.5rem; }
+  }
+
+  /* === SELECTION === */
+  ::selection {
+    background: var(--accent);
+    color: var(--bg-primary);
+  }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-content">
-            <div class="logo">MD Hossen</div>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+<div class="page-wrapper">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Md Deluair Hossen, Ph.D.</h1>
-            <p>Economist & Data Strategist specializing in International Trade, Financial Analysis, and Agricultural Economics</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn">Contact Me</a>
-                <a href="#research" class="btn btn-outline">View Research</a>
-            </div>
-        </div>
-        <a href="#about" class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
-        </a>
-    </section>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-logo">MDH.PhD</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#credentials">Background</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Professional Profile</h3>
-                    <p>Economist and strategic advisor with 10+ years of experience turning complex international trade and financial data into clear, profitable strategies. Skilled in econometric modeling, scenario analysis, and supply chain optimization, I've served at Bangladesh Bank (the central bank of Bangladesh) and collaborated with international organizations including the World Bank and IMF.</p>
-                    <p>I advised private-sector leaders on navigating market volatility, ensuring regulatory compliance, and boosting growth. Passionate about using data-driven insights—across energy, climate policy & tech, AI advancements, and financial development—to help businesses stay ahead of global trends and seize new opportunities.</p>
-                    <h3>Core Competencies</h3>
-                    <div class="competencies">
-                        <span class="competency">Trade & Market Strategy</span>
-                        <span class="competency">Financial Regulation & Compliance</span>
-                        <span class="competency">Data-Driven Insights</span>
-                        <span class="competency">Strategic Communication</span>
-                        <span class="competency">Policy Analysis</span>
-                        <span class="competency">Interdisciplinary Vision</span>
-                        <span class="competency">Advanced Economic Modeling</span>
-                        <span class="competency">AI/ML Implementation in Economics</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section" style="background-color: #f5f5f5;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Professional Experience</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2022 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Postdoctoral Research Associate</h3>
-                        <h4>Agricultural & Resource Economics, UTIA, University of Tennessee</h4>
-                        <ul>
-                            <li>Conduct international trade and trade policy analysis with a focus on agricultural products, fertilizers, and agricultural inputs</li>
-                            <li>Analyze food security and perform dynamic demand analysis, particularly assessing the impact of the Russia-Ukraine conflict on global trade</li>
-                            <li>Execute empirical analyses focusing on firm-level outcomes, trade financing, supply chain, and shipping frequency</li>
-                            <li>Perform macroeconomic analysis with an emphasis on exchange rate pass-through</li>
-                            <li>Manage and analyze terabyte-scale UN Comtrade and other trade datasets to assess non-tariff measures' effects on trade</li>
-                            <li>Evaluate the impact of Carbon Border Adjustments on international trade flows</li>
-                            <li>Deliver guest lectures for multiple courses (AREC 201, AREC 331, AREC 420, AREC 530, AREC 593) across different semesters</li>
-                            <li>Analyze projects on renewable energy and climate technology, providing strategic recommendations to stakeholders</li>
-                            <li>Stay abreast of AI advancements and integrate AI-driven methodologies into economic modeling</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2016 - 2021</div>
-                    <div class="timeline-content">
-                        <h3>Deputy Director</h3>
-                        <h4>Banking Regulations and Policy Department, Bangladesh Bank</h4>
-                        <ul>
-                            <li>Led cross-functional teams to develop and implement Basel III-based financial policies, managing multi-level stakeholder expectations and ensuring regulatory compliance</li>
-                            <li>Delivered strategic financial recommendations derived from firm-level, survey, and macroeconomic data analysis, directly influencing national policy decisions</li>
-                            <li>Forged and maintained key partnerships with World Bank and IMF teams, offering expert insights on financial regulatory frameworks and international finance standards</li>
-                            <li>Applied quantitative economic modeling techniques to assess financial sector vulnerabilities and recommend policy interventions</li>
-                            <li>Utilized background in engineering to enhance systematic approaches to financial risk assessment and structural policy development</li>
-                            <li>Analyzed cross-border financial flows and their implications for monetary policy and financial stability</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2013 - 2016</div>
-                    <div class="timeline-content">
-                        <h3>Assistant Director</h3>
-                        <h4>Bangladesh Financial Intelligence Unit, Bangladesh Bank</h4>
-                        <ul>
-                            <li>Pioneered innovative financial risk assessment methodologies, significantly enhancing detection rates for cross-border financial fraud</li>
-                            <li>Led stakeholder engagement with international financial agencies, successfully implementing enhanced regulatory frameworks</li>
-                            <li>Managed cross-border financial investigations and coordinated policy implementations with multiple international partners</li>
-                            <li>Applied analytical techniques derived from engineering background to develop systematic approaches to financial fraud detection</li>
-                            <li>Developed data-driven methods to identify patterns in complex financial transactions, improving monitoring efficiency</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2015 - 2020</div>
-                    <div class="timeline-content">
-                        <h3>Teaching & Research Assistant</h3>
-                        <h4>University of Tennessee</h4>
-                        <ul>
-                            <li>Sole Instructor for courses such as Trade and Global Economy, Monetary Economics, and Macroeconomics, achieving an average evaluation score of 4.5</li>
-                            <li>Conducted econometric research for Ph.D. dissertation on financial frictions, shipping frequency, and exchange rate pass-through</li>
-                            <li>Built a comprehensive database of trade barriers to support policy analysis for U.S. agricultural exports</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Education</h2>
-            </div>
-            <div class="education-cards">
-                <div class="education-card">
-                    <div class="education-card-header">
-                        <h3>Ph.D. in Economics</h3>
-                        <p>University of Tennessee, Knoxville</p>
-                    </div>
-                    <div class="education-card-body">
-                        <span class="education-year">2015 - 2020</span>
-                        <h4>Dissertation</h4>
-                        <p>Essays on Financial Frictions, Shipping Frequency, and Exchange Rate Pass-Through</p>
-                        <p>• Specialized in econometric research, focusing on advanced statistical models and financial system dynamics</p>
-                        <p>• Developed econometric models to analyze the impact of financial frictions on international trade</p>
-                        <p>• Integrated AI methodologies into economic modeling to enhance predictive accuracy</p>
-                    </div>
-                </div>
-                <div class="education-card">
-                    <div class="education-card-header">
-                        <h3>M.A. in Development Studies</h3>
-                        <p>University of Dhaka, Bangladesh</p>
-                    </div>
-                    <div class="education-card-body">
-                        <span class="education-year">2011 - 2013</span>
-                        <h4>Thesis</h4>
-                        <p>Renewable Energy in South Asia: Analysis of Policy, Public Spending, and Institutions</p>
-                        <p>• Focused on development policies and renewable energy initiatives in South Asia</p>
-                        <p>• Conducted field research on public spending efficiency and institutional frameworks</p>
-                        <p>• Analyzed the role of policy and institutions in promoting renewable energy adoption</p>
-                    </div>
-                </div>
-                <div class="education-card">
-                    <div class="education-card-header">
-                        <h3>B.Sc. in Chemical Engineering</h3>
-                        <p>Bangladesh University of Engineering & Technology</p>
-                    </div>
-                    <div class="education-card-body">
-                        <span class="education-year">2004 - 2010</span>
-                        <p>• Emphasis on process optimization and systems engineering</p>
-                        <p>• Completed a capstone project on sustainable chemical processes and their economic feasibility</p>
-                        <p>• Gained strong analytical and quantitative skills applicable to economic modeling</p>
-                        <p>• Developed foundational knowledge in technology-driven process improvements and sustainability</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Section -->
-    <section id="research" class="section" style="background-color: #f5f5f5;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Research & Publications</h2>
-            </div>
-            
-            <h3 style="margin-bottom: 20px;">Journal Articles</h3>
-            <div class="publications-container">
-                <div class="publication-card">
-                    <div class="publication-title">"Unraveling the Impacts of Freight Rates on U.S. Containerized Agricultural Trade"</div>
-                    <div class="publication-authors">MD Hossen, A Muhammad, B Kenner, J Kaufman</div>
-                    <div class="publication-journal">Journal of the Agricultural and Applied Economics Association, 3(1), 199-211</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Theme Overview: US Agricultural Trade and ASEAN"</div>
-                    <div class="publication-authors">A Muhammad, MD Hossen, AM Countryman</div>
-                    <div class="publication-journal">Choices, 39(3), 1-3</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"US Timber Trade and Vietnam: Exploring the Impacts of the Trade War and Environmental Policies"</div>
-                    <div class="publication-authors">A Muhammad, SL Stewart, MD Hossen</div>
-                    <div class="publication-journal">Choices, 39(3), 1-5</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Dynamic Demand Analysis of Japanese Beef Import"</div>
-                    <div class="publication-authors">A Muhammad, MD Hossen</div>
-                    <div class="publication-journal">Agribusiness, R & R</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"A Global Approach to Estimating Import Demand Elasticities: Insights from Major Agricultural Sectors"</div>
-                    <div class="publication-authors">A Muhammad, MD Hossen</div>
-                    <div class="publication-journal">Journal of the Agricultural and Applied Economics Association</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Impacts of Maritime Freight Rates on Global Beef Demand"</div>
-                    <div class="publication-authors">A Muhammad, MD Hossen</div>
-                    <div class="publication-journal">Agribusiness</div>
-                </div>
-            </div>
-            
-            <h3 style="margin: 30px 0 20px;">Working Papers</h3>
-            <div class="publications-container">
-                <div class="publication-card">
-                    <div class="publication-title">"Per-Shipment Costs, Financing Costs, and Shipping Frequency: Firm-Level Evidence from Bangladesh"</div>
-                    <div class="publication-journal">arXiv preprint arXiv:2303.04223, 2023</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Exchange Rate Pass-Through and Data Frequency"</div>
-                    <div class="publication-journal">arXiv preprint arXiv:2303.04101, 2023</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Impacts of the Russia-Ukraine Conflict on Global Fertilizer and Commodity Markets"</div>
-                    <div class="publication-authors">with Dr. Andrew Muhammad and Dr. Sandro Steinbach</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Analyzing the Impact of Trade Embargoes on Food Security Amidst the Russia-Ukraine War"</div>
-                    <div class="publication-authors">with Dr. Andrew Muhammad and Dr. Sandro Steinbach</div>
-                </div>
-            </div>
-            
-            <h3 style="margin: 30px 0 20px;">Working in Progress</h3>
-            <div class="publications-container">
-                <div class="publication-card">
-                    <div class="publication-title">"The Impact of Non-Tariff Measures on South Asian Exports"</div>
-                    <div class="publication-authors">with Dr. Mitali Pradhan</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"The Impact of the Carbon Border Adjustment on EU Fertilizer Import"</div>
-                    <div class="publication-authors">with Dr. Seong-Hoon Cho and Natalie Crisci</div>
-                </div>
-            </div>
-            
-            <h3 style="margin: 30px 0 20px;">Policy Contributions</h3>
-            <div class="publications-container">
-                <div class="publication-card">
-                    <div class="publication-title">"Guidelines on Interest Rate Risk in the Banking Book (IRRBB)"</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Tariff and Non-Tariff Barriers Affect U.S. Agricultural Exports to the ASEAN Market"</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Angola: U.S. Chicken Exports Facing Increasing Competition in this Leading Market"</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Understanding the Growing U.S. Agricultural Trade Deficit: The Fall in Exports"</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Understanding the Growing U.S. Agricultural Trade Deficit (Part 2): What's Happening with Imports?"</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"USDA Projects a Widening Trade Deficit for Fiscal Year 2025"</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Policy Analysis for Renewable Energy and Climate Tech"</div>
-                    <div class="publication-authors">Developed strategic policies to enhance renewable energy adoption and climate technology integration in South Asia</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Technical Skills</h2>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul class="skills-list">
-                        <li>
-                            <span class="skill-name">AI & ML Modeling</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">R</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">MATLAB</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>Econometrics & Statistical Analysis</h3>
-                    <ul class="skills-list">
-                        <li>
-                            <span class="skill-name">Stata</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">EViews</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">Dynare</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>Data Management & Visualization</h3>
-                    <ul class="skills-list">
-                        <li>
-                            <span class="skill-name">SQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">ArcGIS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">MS Office Suites</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%;"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>Cloud Platforms</h3>
-                    <ul class="skills-list">
-                        <li>
-                            <span class="skill-name">Azure</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">AWS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%;"></div>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="skill-name">GCP</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%;"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="skills-content" style="margin-top: 30px;">
-                <div class="skills-category">
-                    <h3>Additional Skills</h3>
-                    <p>Academic research, teaching, training, consultation, writing opinion pieces in top daily newspapers in Bangladesh, presenting talks in different advocacy forums</p>
-                </div>
-                <div class="skills-category">
-                    <h3>Languages</h3>
-                    <p>English (Professional), Bengali (Native)</p>
-                </div>
-                <div class="skills-category">
-                    <h3>Interests</h3>
-                    <p>Reading books, walking, listening to music, philosophy</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Presentations Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Presentations</h2>
-            </div>
-            <div class="presentations-container">
-                <div class="presentation-card">
-                    <div class="presentation-title">"Per-Shipment Costs and Shipping Frequency: Firm-Level Evidence from Bangladesh"</div>
-                    <div class="presentation-event">Brown Bag Workshops, Department of Economics</div>
-                    <div class="presentation-date">November 2019</div>
-                </div>
-                <div class="presentation-card">
-                    <div class="presentation-title">"Shipping Costs and U.S. Agricultural Trade"</div>
-                    <div class="presentation-event">IATRC, Tampa</div>
-                    <div class="presentation-date">December 2022</div>
-                </div>
-                <div class="presentation-card">
-                    <div class="presentation-title">"Exchange Rate Pass-Through and Data Frequency"</div>
-                    <div class="presentation-event">6th SANEM Annual Economists' Conference (SAEC)</div>
-                    <div class="presentation-date">Dhaka, February 2023</div>
-                </div>
-                <div class="presentation-card">
-                    <div class="presentation-title">"Financing Costs, Per-Shipment Costs, and Shipping Frequency: Firm-Level Evidence from Bangladesh"</div>
-                    <div class="presentation-event">Fourth SANEM-World Bank North America Discussion Forum</div>
-                    <div class="presentation-date">World Bank, Washington DC, May 2023</div>
-                </div>
-                <div class="presentation-card">
-                    <div class="presentation-title">"Analyzing the Impact of Trade Embargoes on Fertilizer Trade Amidst the Russia-Ukraine War"</div>
-                    <div class="presentation-event">IATRC, Tampa</div>
-                    <div class="presentation-date">December 2023</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Awards and Achievements Section -->
-    <section class="section" style="background-color: #f5f5f5;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Awards and Achievements</h2>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <ul class="skills-list" style="list-style-type: none;">
-                        <li>• Travel Awards, Fourth SANEM-World Bank North America Discussion Forum 2023</li>
-                        <li>• Travel Awards, IATRC Conference 2022-2023</li>
-                        <li>• Charles B. Garrison Award for Excellence in Teaching, University of Tennessee, 2020</li>
-                        <li>• Excellence in Central Bank Foundation Training, Bangladesh Bank, 2014</li>
-                        <li>• Technical Scholarship, Bangladesh University of Engineering and Technology, 2004-2006</li>
-                        <li>• Higher Secondary and Junior Scholarship, Government of Bangladesh, 1998-2004</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Funding Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Research Funding (Co-PI)</h2>
-            </div>
-            <div class="publications-container">
-                <div class="publication-card">
-                    <div class="publication-title">"The Russia-Ukraine War and Global Trade Reallocations: Opportunities or Impairments for U.S. Agriculture?"</div>
-                    <div class="publication-journal">USDA-FAS, $75,000</div>
-                    <div class="publication-authors">09/01/2022 – 08/31/2023</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Economics of Global Food Demand: How Income Growth and Prices Influence Food Spending and Intake Across Countries Over Time"</div>
-                    <div class="publication-journal">USDA-FAS, $50,000</div>
-                    <div class="publication-authors">09/01/2022 – 08/31/2023</div>
-                </div>
-                <div class="publication-card">
-                    <div class="publication-title">"Global Implications of the Russia-Ukraine War for Agricultural Trade and Value Chains, Commodity Prices, and Cross-border Investment"</div>
-                    <div class="publication-journal">USDA-NIFA-AFRI, $800,000</div>
-                    <div class="publication-authors">03/01/2023 – 02/28/2027</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Conferences Section -->
-    <section class="section" style="background-color: #f5f5f5;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Conferences & Training</h2>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Conferences</h3>
-                    <ul class="skills-list" style="list-style-type: none;">
-                        <li>• ASSA Annual Meeting, 2020-2021</li>
-                        <li>• NABE Tech Economics Conference, 2019-2023</li>
-                        <li>• Midwest Economics Association, 2019</li>
-                        <li>• Midwest Trade and Theory Meetings, 2019</li>
-                        <li>• 6th SANEM Annual Economists' Conference (SAEC), Dhaka, 2023</li>
-                        <li>• Fourth SANEM-World Bank North America Discussion Forum, Washington DC, 2023</li>
-                        <li>• IATRC Conferences, Tampa, 2022-2023</li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>Relevant Training</h3>
-                    <ul class="skills-list" style="list-style-type: none;">
-                        <li>• Official Visit to USDA Headquarters with Cochran Fellowship Participants, Washington DC, August 2022</li>
-                        <li>• Training on International Financial Reporting Standards (IFRS), Dhaka, March 2021</li>
-                        <li>• Machine Learning & Causal Modeling Workshop, Baker Center, UTK, April 2019</li>
-                        <li>• Training on Maritime Trade & Trade-Based Money Laundering, Bangladesh Bank, May 2015</li>
-                        <li>• Central Bank Foundation Training on Banking and Finance, January - June 2014</li>
-                        <li>• Annual Workshops of Asia-Pacific Group on Money Laundering, Bangkok, November 2014</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Leadership Experiences Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Leadership Experiences</h2>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <ul class="skills-list" style="list-style-type: none;">
-                        <li>• Economics Round Table with Undergraduate Students, UTK, 2017-2019</li>
-                        <li>• Climate Change Impact Assessment Project, Eminence NGO, Bangladesh, 2012</li>
-                        <li>• Founding Member, Dhaka University Reading Club, 2010-2013</li>
-                        <li>• Founding Member, Satyen Bose Science Club, 2007-2009</li>
-                        <li>• Founding Organizer, Various Volunteering and Charity Organizations, 2001-2023</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section" style="background-color: #f5f5f5;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Me</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <ul class="contact-details">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>1016 Forest Heights Rd, Knoxville, TN, 37919</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>mhossen@tennessee.edu</span>
-                        </li>
-                        <li>
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn: mddeluairhossen</span>
-                        </li>
-                        <li>
-                            <i class="fab fa-twitter"></i>
-                            <span>Twitter: @DeluairHossen</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-researchgate"></i></a>
-            </div>
-            <p class="footer-text">© 2025 Md Deluair Hossen. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Dark Mode Toggle -->
-    <div class="dark-mode-toggle">
-        <i class="fas fa-moon"></i>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Computational Economist &amp; AI Engineer</div>
+    <h1>I build simulations that turn <span class="accent">complex data</span> into decisions.</h1>
+    <p class="hero-description">From national-scale economic models to AI-powered analytics &mdash; I help governments, organizations, and businesses understand the systems they operate in.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-secondary">Get In Touch</a>
     </div>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">Simulations Built</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">$925K+</span>
+        <span class="stat-label">Research Funding</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Publications</span>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header reveal">
+    <span class="section-tag">What I Do</span>
+    <h2 class="section-title">Services</h2>
+    <p class="section-subtitle">Deep analytical capabilities across economics, AI, and geospatial systems.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">01</div>
+      <h3>Economic & Policy Simulation</h3>
+      <p>National-scale modeling of trade flows, fiscal policy, employment dynamics, and sector-specific forecasting. Built for governments and development organizations making high-stakes decisions.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">02</div>
+      <h3>Trade & Financial Analytics</h3>
+      <p>Import/export prediction using ensemble methods (Prophet + XGBoost), macro risk assessment, exchange rate modeling, and supply chain resilience analysis. Grounded in central banking experience.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">03</div>
+      <h3>AI / ML Engineering</h3>
+      <p>Custom machine learning pipelines, intelligent dashboards, autonomous agent systems, and AI-powered monitoring platforms. From prototype to production.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">04</div>
+      <h3>Geospatial & Climate Analysis</h3>
+      <p>Spatial economic modeling, climate resilience simulation, agricultural yield forecasting, and natural resource management. GIS-integrated decision support systems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="work">
+  <div class="section-header reveal">
+    <span class="section-tag">Portfolio</span>
+    <h2 class="section-title">Featured Work</h2>
+    <p class="section-subtitle">30+ simulations and tools spanning economic policy, infrastructure, climate, and AI.</p>
+  </div>
+
+  <div class="projects-filter reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="economy">Economy</button>
+    <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+    <button class="filter-btn" data-filter="climate">Climate & Agriculture</button>
+    <button class="filter-btn" data-filter="social">Social Systems</button>
+    <button class="filter-btn" data-filter="ai">AI & Tools</button>
+  </div>
+
+  <div class="projects-grid reveal" id="projectsGrid">
+
+    <!-- ECONOMY -->
+    <a href="https://github.com/deluair/inttradepred" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>International Trade Flow Predictor</h3>
+      <p>Forecast import/export volumes between countries using Prophet + XGBoost ensemble modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Prophet</span><span>XGBoost</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/gdp_simulator_BD" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>GDP Simulator — Bangladesh</h3>
+      <p>Macroeconomic simulation modeling GDP growth trajectories under various policy scenarios.</p>
+      <div class="project-tags"><span>Python</span><span>Simulation</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/macro_simulation_Bangladesh" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Macro Simulation — Bangladesh</h3>
+      <p>Comprehensive macroeconomic simulation covering monetary policy, fiscal dynamics, and external shocks.</p>
+      <div class="project-tags"><span>Python</span><span>Economics</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_trade_simulation" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Trade Simulation</h3>
+      <p>Bilateral and multilateral trade dynamics modeling for Bangladesh's evolving trade partnerships.</p>
+      <div class="project-tags"><span>Python</span><span>Trade</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_publicfinance_simulation" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Public Finance Simulation</h3>
+      <p>Government revenue, expenditure, and debt sustainability modeling for fiscal policy analysis.</p>
+      <div class="project-tags"><span>Python</span><span>Fiscal</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Financial-Inclusion-and-Digital-Payment-Ecosystem-Simulator" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Financial Inclusion & Digital Payments</h3>
+      <p>Simulating digital payment ecosystem adoption and financial inclusion pathways.</p>
+      <div class="project-tags"><span>Python</span><span>Fintech</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_remittance_simulation" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Remittance Flow Simulation</h3>
+      <p>Modeling diaspora remittance flows and their macroeconomic impact on receiving economies.</p>
+      <div class="project-tags"><span>Python</span><span>Remittance</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_SME_simulation" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>SME Sector Simulation</h3>
+      <p>Small and medium enterprise growth modeling, access to finance, and policy intervention effects.</p>
+      <div class="project-tags"><span>Python</span><span>SME</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_industrial_sector_simulation" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Industrial Sector Simulation</h3>
+      <p>Manufacturing output, industrial policy, and structural transformation modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Industry</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/bangladesh-employment-simulator" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Employment Simulator</h3>
+      <p>Labor market dynamics, employment generation, and workforce transition modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Labor</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Supply-Chain-Resilience-and-Export-Diversification-Simulator-for-Bangladesh" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>Supply Chain Resilience Simulator</h3>
+      <p>Export diversification and supply chain vulnerability analysis under trade disruptions.</p>
+      <div class="project-tags"><span>Python</span><span>Supply Chain</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_ASEAN_simulation" target="_blank" class="project-card" data-category="economy">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Economy</div>
+      <h3>BD-ASEAN Integration Simulation</h3>
+      <p>Modeling economic integration scenarios between Bangladesh and ASEAN trade bloc.</p>
+      <div class="project-tags"><span>Python</span><span>Regional Trade</span></div>
+    </a>
+
+    <!-- INFRASTRUCTURE -->
+    <a href="https://github.com/deluair/BD_energy_simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Energy Sector Simulation</h3>
+      <p>Power generation mix, energy demand forecasting, and renewable transition modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Energy</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Power-Development-Board-Comprehensive-Restructuring-Simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Power Development Board Restructuring</h3>
+      <p>Comprehensive simulation of institutional restructuring for Bangladesh's national power utility.</p>
+      <div class="project-tags"><span>Python</span><span>Institutional</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_transport_simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Transport Network Simulation</h3>
+      <p>Multi-modal transportation infrastructure modeling and investment prioritization.</p>
+      <div class="project-tags"><span>Python</span><span>Transport</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Railway-Modernization-Comprehensive-Transformation-Simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Railway Modernization Simulation</h3>
+      <p>Strategic simulation of railway system transformation covering technology, operations, and finance.</p>
+      <div class="project-tags"><span>Python</span><span>Railway</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Shipping-Corporation-Comprehensive-Strategic-Renewal-Simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Shipping Corporation Renewal</h3>
+      <p>Strategic renewal simulation for national maritime shipping fleet and operations.</p>
+      <div class="project-tags"><span>Python</span><span>Maritime</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Biman-Bangladesh-Airlines-Comprehensive-Turnaround-Simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Biman Airlines Turnaround Simulation</h3>
+      <p>National airline operational and financial turnaround strategy modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Aviation</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Dhaka-Water-Supply-and-Sewerage-Authority-Comprehensive-Transformation-Simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Dhaka Water & Sewerage Transformation</h3>
+      <p>Urban water infrastructure transformation simulation for a megacity of 20M+ people.</p>
+      <div class="project-tags"><span>Python</span><span>Urban</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_water_resource_simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Water Resource Simulation</h3>
+      <p>National water resource management including river systems, groundwater, and allocation.</p>
+      <div class="project-tags"><span>Python</span><span>Hydrology</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_digital_transformation_simulation" target="_blank" class="project-card" data-category="infrastructure">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Infrastructure</div>
+      <h3>Digital Transformation Simulation</h3>
+      <p>E-governance, digital infrastructure, and national digital ecosystem development modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Digital</span></div>
+    </a>
+
+    <!-- CLIMATE & AGRICULTURE -->
+    <a href="https://github.com/deluair/BD_climate_simulation" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Climate Impact Simulation</h3>
+      <p>Climate change impact modeling on economic output, infrastructure, and population displacement.</p>
+      <div class="project-tags"><span>Python</span><span>Climate</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_agriculture_simulation" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Agriculture Sector Simulation</h3>
+      <p>Crop production, agricultural policy, and food system dynamics under changing conditions.</p>
+      <div class="project-tags"><span>Python</span><span>Agriculture</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Climate-Resilient-Agricultural-Economics-Simulator-for-Bangladesh-Rice-Production" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Climate-Resilient Rice Production</h3>
+      <p>Rice yield simulation under climate stress scenarios — critical for a nation where rice is the staple.</p>
+      <div class="project-tags"><span>Python</span><span>Food Security</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_food_security_simulation" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Food Security Simulation</h3>
+      <p>National food security modeling covering production, distribution, and vulnerability assessment.</p>
+      <div class="project-tags"><span>Python</span><span>Food Security</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Agricultural-Development-Corporation-Comprehensive-Modernization-Simulation" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Agricultural Development Corp Modernization</h3>
+      <p>Institutional modernization simulation for the national agricultural development body.</p>
+      <div class="project-tags"><span>Python</span><span>Institutional</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_disaster_simulation" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Disaster Simulation</h3>
+      <p>Natural disaster impact modeling — cyclones, flooding, and economic recovery trajectories.</p>
+      <div class="project-tags"><span>Python</span><span>Disaster</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Flood-Management-and-Early-Warning-System-Simulator" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Flood Management & Early Warning</h3>
+      <p>Early warning system simulation for flood prediction, response coordination, and damage mitigation.</p>
+      <div class="project-tags"><span>Python</span><span>Early Warning</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_natural_resource_simulation" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Natural Resource Simulation</h3>
+      <p>Natural resource extraction, management, and sustainability modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Resources</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Jute-Mills-Corporation-Comprehensive-Repositioning-Simulation" target="_blank" class="project-card" data-category="climate">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Climate & Agriculture</div>
+      <h3>Jute Mills Corporation Repositioning</h3>
+      <p>Strategic repositioning simulation for Bangladesh's historically significant jute industry.</p>
+      <div class="project-tags"><span>Python</span><span>Industry</span></div>
+    </a>
+
+    <!-- SOCIAL SYSTEMS -->
+    <a href="https://github.com/deluair/BD_healthcare_simulation" target="_blank" class="project-card" data-category="social">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Social Systems</div>
+      <h3>Healthcare System Simulation</h3>
+      <p>Public health infrastructure, disease burden, and healthcare access modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Health</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Healthcare-System-Resilience-and-Disease-Surveillance-Simulator" target="_blank" class="project-card" data-category="social">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Social Systems</div>
+      <h3>Disease Surveillance Simulator</h3>
+      <p>Healthcare system resilience and epidemic surveillance modeling for outbreak preparedness.</p>
+      <div class="project-tags"><span>Python</span><span>Surveillance</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_education_simulation" target="_blank" class="project-card" data-category="social">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Social Systems</div>
+      <h3>Education System Simulation</h3>
+      <p>Education access, quality metrics, and human capital development modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Education</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/BD_social_protection_simulation" target="_blank" class="project-card" data-category="social">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Social Systems</div>
+      <h3>Social Protection Simulation</h3>
+      <p>Safety net programs, poverty reduction, and social welfare policy modeling.</p>
+      <div class="project-tags"><span>Python</span><span>Welfare</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/Bangladesh-Tourism-Resilience-Simulator" target="_blank" class="project-card" data-category="social">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">Social Systems</div>
+      <h3>Tourism Resilience Simulator</h3>
+      <p>Tourism sector development and resilience modeling for sustainable economic diversification.</p>
+      <div class="project-tags"><span>Python</span><span>Tourism</span></div>
+    </a>
+
+    <!-- AI & TOOLS -->
+    <a href="https://github.com/deluair/worldmonitor" target="_blank" class="project-card" data-category="ai">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">AI & Tools</div>
+      <h3>WorldMonitor</h3>
+      <p>Real-time global intelligence dashboard — AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking.</p>
+      <div class="project-tags"><span>TypeScript</span><span>AI</span><span>Dashboard</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/automaton" target="_blank" class="project-card" data-category="ai">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">AI & Tools</div>
+      <h3>Automaton</h3>
+      <p>Autonomous AI agent that can earn, replicate, and evolve without human intervention.</p>
+      <div class="project-tags"><span>TypeScript</span><span>Agents</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/droidclaw" target="_blank" class="project-card" data-category="ai">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">AI & Tools</div>
+      <h3>DroidClaw</h3>
+      <p>Turn old phones into AI agents — give it a goal in plain English, it reads the screen and acts via ADB.</p>
+      <div class="project-tags"><span>TypeScript</span><span>Mobile AI</span></div>
+    </a>
+
+    <a href="https://github.com/deluair/shannon" target="_blank" class="project-card" data-category="ai">
+      <span class="project-link-icon">&nearr;</span>
+      <div class="project-domain">AI & Tools</div>
+      <h3>Shannon</h3>
+      <p>Autonomous AI security researcher — 96.15% success rate on the XBOW Benchmark for web app exploit discovery.</p>
+      <div class="project-tags"><span>TypeScript</span><span>Security</span><span>AI</span></div>
+    </a>
+
+  </div>
+
+  <div class="projects-more reveal">
+    <a href="https://github.com/deluair?tab=repositories" target="_blank" class="btn-secondary">View All on GitHub &nearr;</a>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="section-header reveal">
+    <span class="section-tag">Background</span>
+    <h2 class="section-title">Credentials</h2>
+    <p class="section-subtitle">A decade bridging central banking, academic research, and computational systems.</p>
+  </div>
+
+  <div class="credentials-grid reveal">
+    <div class="credential-card">
+      <div class="cred-period">2022 &mdash; Present</div>
+      <h3>Postdoctoral Research Associate</h3>
+      <p class="cred-org">University of Tennessee &mdash; Agricultural & Resource Economics</p>
+      <p class="cred-detail">International trade analysis, food security, macroeconomic modeling. Co-PI on $925K+ USDA grants.</p>
+    </div>
+    <div class="credential-card">
+      <div class="cred-period">2016 &mdash; 2021</div>
+      <h3>Deputy Director</h3>
+      <p class="cred-org">Bangladesh Bank (Central Bank)</p>
+      <p class="cred-detail">Banking regulation & policy. Direct experience shaping financial policy for a nation of 170M people.</p>
+    </div>
+    <div class="credential-card">
+      <div class="cred-period">2013 &mdash; 2016</div>
+      <h3>Assistant Director</h3>
+      <p class="cred-org">Bangladesh Financial Intelligence Unit</p>
+      <p class="cred-detail">Financial intelligence, anti-money laundering, and regulatory compliance.</p>
+    </div>
+    <div class="credential-card">
+      <div class="cred-period">Ph.D.</div>
+      <h3>Economics</h3>
+      <p class="cred-org">University of Tennessee</p>
+      <p class="cred-detail">Garrison Award for Teaching Excellence. 6 publications, 4 working papers.</p>
+    </div>
+    <div class="credential-card">
+      <div class="cred-period">B.Sc.</div>
+      <h3>Chemical Engineering</h3>
+      <p class="cred-org">BUET — Bangladesh University of Engineering & Technology</p>
+      <p class="cred-detail">Technical foundation bridging engineering systems thinking with economic analysis.</p>
+    </div>
+    <div class="credential-card">
+      <div class="cred-period">Collaborations</div>
+      <h3>World Bank & IMF</h3>
+      <p class="cred-org">International Development</p>
+      <p class="cred-detail">Contributed to policy analysis and economic advisory work with multilateral organizations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section id="tech">
+  <div class="section-header reveal">
+    <span class="section-tag">Stack</span>
+    <h2 class="section-title">Technical Skills</h2>
+  </div>
+  <div class="tech-grid reveal">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">R</span>
+    <span class="tech-tag">MATLAB</span>
+    <span class="tech-tag">Stata</span>
+    <span class="tech-tag">SQL</span>
+    <span class="tech-tag">EViews</span>
+    <span class="tech-tag">Scikit-Learn</span>
+    <span class="tech-tag">XGBoost</span>
+    <span class="tech-tag">Prophet</span>
+    <span class="tech-tag">PyTorch</span>
+    <span class="tech-tag">Pandas</span>
+    <span class="tech-tag">GeoPandas</span>
+    <span class="tech-tag">ArcGIS</span>
+    <span class="tech-tag">Streamlit</span>
+    <span class="tech-tag">Flask</span>
+    <span class="tech-tag">TypeScript</span>
+    <span class="tech-tag">Azure</span>
+    <span class="tech-tag">AWS</span>
+    <span class="tech-tag">GCP</span>
+    <span class="tech-tag">Docker</span>
+    <span class="tech-tag">Git</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-header reveal">
+    <span class="section-tag">Let's Work Together</span>
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Available for consulting engagements, collaborative research, and contract analytics work.</p>
+  </div>
+  <div class="contact-links reveal">
+    <a href="mailto:mhossen@tennessee.edu" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      mhossen@tennessee.edu
+    </a>
+    <a href="https://linkedin.com/in/mddeluairhossen" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/deluair" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+    <a href="https://twitter.com/DeluairHossen" target="_blank" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+      Twitter
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Md Deluair Hossen. All rights reserved.</p>
+</footer>
+
+</div>
+
+<script>
+// === SCROLL REVEAL ===
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// === PROJECT FILTER ===
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = 'block';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(10px)';
+        requestAnimationFrame(() => {
+          card.style.transition = 'opacity 0.4s, transform 0.4s';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
         });
-        
-        // Dark Mode Toggle
-        const darkModeToggle = document.querySelector('.dark-mode-toggle');
-        const body = document.body;
-        
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Change icon
-            const icon = darkModeToggle.querySelector('i');
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-            
-            // Save preference in localStorage
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-        
-        // Check if dark mode was enabled previously
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            const icon = darkModeToggle.querySelector('i');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-        
-        // Back to Top Button
-        const backToTopBtn = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('active');
-            } else {
-                backToTopBtn.classList.remove('active');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Smooth Scrolling for all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Form Submission (For demonstration)
-        const contactForm = document.getElementById('contact-form');
-        
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Show success message (in a real implementation, you would send the form data to a server)
-            const formControls = contactForm.querySelectorAll('.form-control');
-            formControls.forEach(control => {
-                control.value = '';
-            });
-            
-            alert('Your message has been sent successfully!');
-        });
-        
-        // Header Scroll Effect
-        const header = document.querySelector('.header');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 50) {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    </script>
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// === MOBILE MENU ===
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  menuBtn.textContent = navLinks.classList.contains('open') ? '\u2715' : '\u2630';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.textContent = '\u2630';
+  });
+});
+
+// === NAV SCROLL EFFECT ===
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  const scrollY = window.scrollY;
+  if (scrollY > 100) {
+    nav.style.background = 'rgba(10, 15, 26, 0.95)';
+  } else {
+    nav.style.background = 'rgba(10, 15, 26, 0.85)';
+  }
+  lastScroll = scrollY;
+});
+</script>
+
 </body>
 </html>
