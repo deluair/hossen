@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md Deluair Hossen, Ph.D. — I Solve Complex Economic & Data Problems</title>
   <meta name="description"
-    content="Economist, AI engineer, and consultant. I help governments, organizations, and businesses solve complex problems with simulations, data systems, and AI.">
+    content="Economist, AI engineer, and problem solver. I help governments, organizations, and businesses solve complex problems with simulations, data systems, and AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -491,14 +491,6 @@
       line-height: 1.4;
     }
 
-    .project-card .project-outcome {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
     .project-card p {
       font-size: 0.85rem;
       color: var(--text-secondary);
@@ -535,109 +527,23 @@
       color: var(--accent);
     }
 
-    .project-card.featured {
-      grid-column: span 1;
-      border-color: rgba(14, 240, 194, 0.25);
-      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(14, 240, 194, 0.06) 100%);
-      position: relative;
-    }
-
-    .project-card.featured::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), rgba(14, 240, 194, 0.2));
-    }
-
-    .project-card.featured .project-domain {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
     .projects-more {
       text-align: center;
       margin-top: 2rem;
     }
 
-    /* === CREDENTIALS === */
-    .credentials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+    /* === BACKGROUND (ABOUT) === */
+    .background-section {
+      padding: 100px 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .credential-card {
-      padding: 2rem;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .credential-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0.3;
-    }
-
-    .credential-card .cred-period {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.8rem;
-    }
-
-    .credential-card h3 {
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .credential-card .cred-org {
+    .background-text {
       color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .credential-card .cred-detail {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--text-dim);
-      line-height: 1.6;
-    }
-
-    /* === TECH === */
-    .tech-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .tech-tag {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 0.6rem 1.2rem;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      background: var(--bg-card);
-      transition: all 0.3s;
-    }
-
-    .tech-tag:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: var(--accent-dim);
+      font-size: 1.1rem;
+      line-height: 1.9;
+      max-width: 720px;
     }
 
     /* === CONTACT === */
@@ -781,6 +687,10 @@
       section {
         padding: 60px 1.5rem;
       }
+
+      .background-section {
+        padding: 60px 1.5rem;
+      }
     }
 
     /* === SELECTION === */
@@ -800,8 +710,8 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#problems">Problems I Solve</a></li>
         <li><a href="#proof">Proof</a></li>
-        <li><a href="#credentials">Background</a></li>
-        <li><a href="#contact">Hire Me</a></li>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#contact">Get in Touch</a></li>
       </ul>
       <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
     </nav>
@@ -809,32 +719,26 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-tag">Economist &bull; AI Engineer &bull; Consultant</div>
+        <div class="hero-tag">Economist &bull; AI Engineer &bull; Problem Solver</div>
         <h1>You have a <span class="accent">hard problem.</span><br>I build the system that solves it.</h1>
-        <p class="hero-description">I'm Deluair Hossen &mdash; a Ph.D. economist and engineer who builds simulations, AI
-          systems, and data platforms for governments, multilateral organizations, and businesses. I've worked with
-          Bangladesh Bank, the World Bank, the IMF, and the USDA. If your problem involves economics, policy, trade, or
-          data at scale &mdash; I can help.</p>
+        <p class="hero-description">I'm Deluair Hossen, a Ph.D. economist who builds simulations, AI systems, and data
+          platforms. Governments and organizations bring me problems they can't solve internally. I solve them.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn-primary">Discuss Your Problem</a>
-          <a href="#proof" class="btn-secondary">See Past Work</a>
+          <a href="mailto:hossenmddeluair@gmail.com" class="btn-primary">Describe Your Problem</a>
+          <a href="#problems" class="btn-secondary">See How I Work</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-number">30+</span>
-            <span class="stat-label">Problems Solved</span>
+            <span class="stat-label">Problems Delivered</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">10+</span>
-            <span class="stat-label">Years Experience</span>
+            <span class="stat-label">Years in the Field</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">$925K+</span>
-            <span class="stat-label">Research Grants</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">170M</span>
-            <span class="stat-label">People Impacted</span>
+            <span class="stat-label">In Research Grants</span>
           </div>
         </div>
       </div>
@@ -844,7 +748,7 @@
     <section id="problems">
       <div class="section-header reveal">
         <span class="section-tag">Problems I Solve</span>
-        <h2 class="section-title">You bring the question. I build the answer.</h2>
+        <h2 class="section-title">Tell me what's not working. I'll figure out the rest.</h2>
         <p class="section-subtitle">These are the kinds of problems clients and collaborators bring to me.</p>
       </div>
       <div class="problems-grid">
@@ -852,28 +756,27 @@
         <div class="problem-card reveal">
           <div class="problem-icon">POLICY</div>
           <h3>Economic & Policy Decisions</h3>
-          <p class="problem-question">"We need to understand the impact of this trade policy before we commit billions."</p>
-          <p class="problem-answer">I build <strong>national-scale simulations</strong> &mdash; trade flow models, fiscal
-            impact analysis, employment forecasting, and sector projections &mdash; so you make policy decisions with
-            evidence, not guesswork. Built for governments and development organizations.</p>
+          <p class="problem-question">"We need to understand the impact of this trade policy before we commit billions."
+          </p>
+          <p class="problem-answer">I build <strong>national-scale simulations</strong>. Trade flow models, fiscal
+            impact analysis, employment forecasting, and sector projections. So you make policy decisions with evidence,
+            not guesswork.</p>
         </div>
 
         <div class="problem-card reveal">
           <div class="problem-icon">TRADE</div>
           <h3>Trade & Financial Risk</h3>
           <p class="problem-question">"Our trade data is scattered across 20 sources. We can't see what's coming."</p>
-          <p class="problem-answer">I unify data and build <strong>predictive trade analytics</strong> &mdash; import/export
-            forecasting, exchange rate pass-through models, supply chain risk analysis, and commodity intelligence.
-            Grounded in my years at Bangladesh's central bank.</p>
+          <p class="problem-answer">I unify scattered data and build <strong>predictive trade analytics</strong>.
+            Import/export forecasting, exchange rate models, supply chain risk analysis, and commodity intelligence.</p>
         </div>
 
         <div class="problem-card reveal">
           <div class="problem-icon">AI</div>
           <h3>AI & Automation Systems</h3>
           <p class="problem-question">"We're drowning in data but can't extract insight fast enough."</p>
-          <p class="problem-answer">I design and ship <strong>production AI systems</strong> &mdash; ML pipelines,
-            multi-agent intelligence platforms, autonomous monitoring, and AI-powered dashboards. From prototype to
-            deployed product.</p>
+          <p class="problem-answer">I design and ship <strong>production AI systems</strong>. ML pipelines, multi-agent
+            platforms, autonomous monitoring, and AI-powered dashboards. From prototype to deployed product.</p>
         </div>
 
         <div class="problem-card reveal">
@@ -881,27 +784,24 @@
           <h3>Climate & Geospatial Analysis</h3>
           <p class="problem-question">"How will climate change affect agricultural yields in our region over the next
             decade?"</p>
-          <p class="problem-answer">I build <strong>spatial economic models</strong> &mdash; climate resilience
-            simulations, crop yield forecasting, natural resource management systems, and GIS-integrated decision
-            platforms.</p>
+          <p class="problem-answer">I build <strong>spatial economic models</strong>. Climate resilience simulations,
+            crop yield forecasting, natural resource management systems, and GIS-integrated decision platforms.</p>
         </div>
 
         <div class="problem-card reveal">
           <div class="problem-icon">DATA</div>
           <h3>Data Platforms at Scale</h3>
           <p class="problem-question">"Our country's public data is trapped in PDFs and spreadsheets nobody uses."</p>
-          <p class="problem-answer">I build <strong>full-stack data platforms</strong> from scratch &mdash; interactive
-            dashboards, open data portals, real-time indicators, and public-facing tools serving millions. I've done it
-            for 170M+ people.</p>
+          <p class="problem-answer">I build <strong>full-stack data platforms</strong> from scratch. Interactive
+            dashboards, open data portals, real-time indicators, and public-facing tools that people actually use.</p>
         </div>
 
         <div class="problem-card reveal">
           <div class="problem-icon">RESEARCH</div>
           <h3>Applied Research & Publications</h3>
           <p class="problem-question">"We need rigorous, publishable analysis to support our funding proposal."</p>
-          <p class="problem-answer">I deliver <strong>peer-reviewed research</strong> &mdash; econometric analysis, grant
-            writing, and academic publications. Co-PI on $925K+ in USDA grants. 6 published papers, 4 working
-            papers.</p>
+          <p class="problem-answer">I deliver <strong>peer-reviewed research</strong>. Econometric analysis, grant
+            writing, and academic publications. The kind of work that holds up to scrutiny.</p>
         </div>
 
       </div>
@@ -917,25 +817,24 @@
         <div class="process-step">
           <span class="step-number">01</span>
           <h3>Diagnose</h3>
-          <p>We talk. I understand the real problem &mdash; not just the symptoms. I map the data landscape, constraints,
-            and what success looks like.</p>
+          <p>We talk. I listen. I map out what's actually going on. The data, the constraints, what success looks like
+            for you.</p>
         </div>
         <div class="process-step">
           <span class="step-number">02</span>
           <h3>Design</h3>
-          <p>I architect the solution &mdash; what model, what data, what technology. You get a clear plan before any code
-            is written.</p>
+          <p>I architect the solution. What model, what data, what technology. You get a clear plan before any code is
+            written.</p>
         </div>
         <div class="process-step">
           <span class="step-number">03</span>
           <h3>Build</h3>
-          <p>I build the simulation, the pipeline, the dashboard, the platform. Full-stack, end-to-end. I don't hand off
-            half-finished work.</p>
+          <p>I build it end-to-end. The simulation, the pipeline, the dashboard. Whatever the problem needs.</p>
         </div>
         <div class="process-step">
           <span class="step-number">04</span>
           <h3>Deliver</h3>
-          <p>You get a working system &mdash; deployed, documented, and ready. Plus the knowledge transfer so your team can
+          <p>You get a working system. Deployed, documented, and ready. Plus the knowledge transfer so your team can
             maintain it.</p>
         </div>
       </div>
@@ -945,48 +844,38 @@
     <section id="proof">
       <div class="section-header reveal">
         <span class="section-tag">Proof</span>
-        <h2 class="section-title">Platforms I've built &mdash; live, open-source, end-to-end</h2>
-        <p class="section-subtitle">Not mockups. Not proposals. Working systems serving real users right now.</p>
+        <h2 class="section-title">Some problems I've worked on</h2>
       </div>
 
       <div class="projects-grid reveal">
 
-        <a href="https://bdfacts.org" target="_blank" class="project-card featured">
+        <a href="https://bdfacts.org" target="_blank" class="project-card">
           <span class="project-link-icon">&nearr;</span>
-          <div class="project-domain">Problem &mdash; Open Data</div>
-          <h3>BDFacts &mdash; Bangladesh Open Data Platform</h3>
-          <p class="project-outcome">170M+ citizens served &bull; 60+ interactive pages &bull; 7 economic models</p>
-          <p>Government data was scattered across hundreds of PDFs and spreadsheets. I built a single platform with 31
-            life simulators, 41 sector projections, 150+ indicators, and a real-time data clock. Bangla-first bilingual.
-            Free, no ads, no login.</p>
-          <div class="project-tags"><span>React 19</span><span>Vite
-              7</span><span>FastAPI</span><span>Python</span><span>PWA</span><span>Framer Motion</span><span>Live</span>
+          <div class="project-domain">Open Data</div>
+          <h3>BDFacts</h3>
+          <p>Government data was scattered across hundreds of PDFs. Now there's a single free platform with 60+
+            interactive pages anyone can use.</p>
+          <div class="project-tags"><span>React</span><span>FastAPI</span><span>Python</span><span>PWA</span></div>
+        </a>
+
+        <a href="https://tradeweave.org" target="_blank" class="project-card">
+          <span class="project-link-icon">&nearr;</span>
+          <div class="project-domain">Trade Intelligence</div>
+          <h3>TradeWeave</h3>
+          <p>Trade analysts lacked a free, comprehensive tool. Now there's one covering 238 countries and 60+ years of
+            data.</p>
+          <div class="project-tags"><span>Next.js</span><span>TypeScript</span><span>D3.js</span><span>SQLite</span>
           </div>
         </a>
 
-        <a href="https://tradeweave.org" target="_blank" class="project-card featured">
+        <a href="https://election26bnp-1.netlify.app" target="_blank" class="project-card">
           <span class="project-link-icon">&nearr;</span>
-          <div class="project-domain">Problem &mdash; Trade Intelligence</div>
-          <h3>TradeWeave &mdash; Global Trade Analytics</h3>
-          <p class="project-outcome">238 countries &bull; 5,000+ products &bull; 17.3M rows of data</p>
-          <p>Trade analysts had no free, comprehensive tool. I built one covering 60+ years of data with 7 economic
-            models (Gravity, RCA), 3D globe visualization, commodity intelligence, and HS 6-digit product
-            classification.</p>
-          <div class="project-tags"><span>Next.js
-              15</span><span>TypeScript</span><span>D3.js</span><span>Three.js</span><span>SQLite</span><span>Tailwind</span><span>Live</span>
+          <div class="project-domain">Election Intelligence</div>
+          <h3>Bangladesh 2026 Election Hub</h3>
+          <p>Election strategists needed real-time constituency intelligence. Now there's a system generating daily
+            analysis across 300 constituencies.</p>
+          <div class="project-tags"><span>React</span><span>Supabase</span><span>Gemini AI</span><span>Tailwind</span>
           </div>
-        </a>
-
-        <a href="https://election26bnp-1.netlify.app" target="_blank" class="project-card featured">
-          <span class="project-link-icon">&nearr;</span>
-          <div class="project-domain">Problem &mdash; Election Intelligence</div>
-          <h3>Bangladesh 2026 Election Strategic Hub</h3>
-          <p class="project-outcome">300 constituencies &bull; Multi-agent AI &bull; Daily intelligence</p>
-          <p>Election strategists needed real-time constituency intelligence. I built a multi-agent AI system (Gemini
-            Flash) generating daily intel with specialized election and media agents, interactive maps, live seat
-            projections, and scenario modeling.</p>
-          <div class="project-tags"><span>React</span><span>Supabase</span><span>Gemini AI</span><span>Framer
-              Motion</span><span>Tailwind</span><span>Live</span></div>
         </a>
 
       </div>
@@ -997,113 +886,36 @@
       </div>
     </section>
 
-    <!-- CREDENTIALS -->
-    <section id="credentials">
+    <!-- BACKGROUND -->
+    <section id="background" class="background-section">
       <div class="section-header reveal">
-        <span class="section-tag">Why Me</span>
-        <h2 class="section-title">A decade solving real-world problems</h2>
-        <p class="section-subtitle">Central banking, multilateral advisory, academic research, and full-stack
-          engineering. Not many people have all four.</p>
+        <span class="section-tag">Background</span>
+        <h2 class="section-title">A bit about me</h2>
       </div>
-
-      <div class="credentials-grid reveal">
-        <div class="credential-card">
-          <div class="cred-period">2022 &mdash; Present</div>
-          <h3>Postdoctoral Research Associate</h3>
-          <p class="cred-org">University of Tennessee &mdash; Agricultural & Resource Economics</p>
-          <p class="cred-detail">International trade analysis, food security, macroeconomic modeling. Co-PI on $925K+
-            USDA grants. 6 publications.</p>
-        </div>
-        <div class="credential-card">
-          <div class="cred-period">2016 &mdash; 2021</div>
-          <h3>Deputy Director</h3>
-          <p class="cred-org">Bangladesh Bank (Central Bank)</p>
-          <p class="cred-detail">Banking regulation & policy for a nation of 170M. Direct experience shaping monetary and
-            financial systems at national scale.</p>
-        </div>
-        <div class="credential-card">
-          <div class="cred-period">2013 &mdash; 2016</div>
-          <h3>Assistant Director</h3>
-          <p class="cred-org">Bangladesh Financial Intelligence Unit</p>
-          <p class="cred-detail">Financial intelligence, anti-money laundering, compliance systems, and regulatory
-            enforcement.</p>
-        </div>
-        <div class="credential-card">
-          <div class="cred-period">Ph.D. Economics</div>
-          <h3>University of Tennessee</h3>
-          <p class="cred-org">Financial frictions, shipping frequency, exchange rate pass-through</p>
-          <p class="cred-detail">Garrison Award for Teaching Excellence. Dissertation on real-world trade
-            dynamics.</p>
-        </div>
-        <div class="credential-card">
-          <div class="cred-period">B.Sc. Chemical Engineering</div>
-          <h3>BUET</h3>
-          <p class="cred-org">Bangladesh University of Engineering & Technology</p>
-          <p class="cred-detail">Engineering-first thinking applied to economic systems. Systems design from first
-            principles.</p>
-        </div>
-        <div class="credential-card">
-          <div class="cred-period">Advisory</div>
-          <h3>World Bank & IMF</h3>
-          <p class="cred-org">Multilateral Organizations</p>
-          <p class="cred-detail">Policy analysis and economic advisory work at the highest levels of international
-            development.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TECH -->
-    <section id="tech">
-      <div class="section-header reveal">
-        <span class="section-tag">Tools</span>
-        <h2 class="section-title">I use whatever solves the problem</h2>
-      </div>
-      <div class="tech-grid reveal">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">R</span>
-        <span class="tech-tag">MATLAB</span>
-        <span class="tech-tag">Stata</span>
-        <span class="tech-tag">SQL</span>
-        <span class="tech-tag">EViews</span>
-        <span class="tech-tag">Scikit-Learn</span>
-        <span class="tech-tag">XGBoost</span>
-        <span class="tech-tag">Prophet</span>
-        <span class="tech-tag">PyTorch</span>
-        <span class="tech-tag">Pandas</span>
-        <span class="tech-tag">GeoPandas</span>
-        <span class="tech-tag">ArcGIS</span>
-        <span class="tech-tag">React</span>
-        <span class="tech-tag">Next.js</span>
-        <span class="tech-tag">TypeScript</span>
-        <span class="tech-tag">D3.js</span>
-        <span class="tech-tag">Three.js</span>
-        <span class="tech-tag">FastAPI</span>
-        <span class="tech-tag">Flask</span>
-        <span class="tech-tag">Streamlit</span>
-        <span class="tech-tag">Azure</span>
-        <span class="tech-tag">AWS</span>
-        <span class="tech-tag">GCP</span>
-        <span class="tech-tag">Docker</span>
-        <span class="tech-tag">Supabase</span>
-        <span class="tech-tag">Git</span>
-      </div>
+      <p class="background-text reveal">
+        I studied chemical engineering at BUET, then spent several years in banking regulation and financial intelligence
+        in Bangladesh. I moved to the U.S. for a Ph.D. in Economics at the University of Tennessee, where I focused on
+        trade dynamics and exchange rate pass-through. Now I work as a postdoctoral researcher in agricultural and
+        resource economics, collaborating on international trade, food security, and macroeconomic modeling. Along the
+        way I picked up full-stack engineering because the problems I work on need working software, not just papers.
+      </p>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="contact-section">
       <div class="section-header reveal">
         <span class="section-tag">Let's Talk</span>
-        <h2 class="section-title">Have a problem? Let's solve it.</h2>
+        <h2 class="section-title">Have a problem? Tell me about it.</h2>
         <p class="section-subtitle">Available for consulting, contract work, collaborative research, and advisory
           engagements. I respond within 24 hours.</p>
       </div>
       <div class="contact-links reveal">
-        <a href="mailto:mhossen@tennessee.edu" class="contact-link">
+        <a href="mailto:hossenmddeluair@gmail.com" class="contact-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
           </svg>
-          mhossen@tennessee.edu
+          hossenmddeluair@gmail.com
         </a>
         <a href="https://linkedin.com/in/mddeluairhossen" target="_blank" class="contact-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
