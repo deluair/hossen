@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Md Deluair Hossen, Ph.D. — Computational Economist & AI Engineer</title>
+  <title>Md Deluair Hossen, Ph.D. — I Solve Complex Economic & Data Problems</title>
   <meta name="description"
-    content="I build simulations and AI systems that turn complex economic, climate, and policy data into decisions.">
+    content="Economist, AI engineer, and consultant. I help governments, organizations, and businesses solve complex problems with simulations, data systems, and AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -210,7 +210,7 @@
     .hero-description {
       font-size: 1.15rem;
       color: var(--text-secondary);
-      max-width: 600px;
+      max-width: 620px;
       margin-bottom: 2.5rem;
       opacity: 0;
       animation: fadeSlideUp 0.8s ease forwards;
@@ -337,14 +337,14 @@
       max-width: 600px;
     }
 
-    /* === SERVICES === */
-    .services-grid {
+    /* === PROBLEMS I SOLVE === */
+    .problems-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
 
-    .service-card {
+    .problem-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       padding: 2.5rem 2rem;
@@ -353,7 +353,7 @@
       transition: all 0.4s;
     }
 
-    .service-card::before {
+    .problem-card::before {
       content: '';
       position: absolute;
       top: 0;
@@ -365,17 +365,17 @@
       transition: opacity 0.4s;
     }
 
-    .service-card:hover {
+    .problem-card:hover {
       border-color: rgba(14, 240, 194, 0.3);
       background: var(--bg-card-hover);
       transform: translateY(-4px);
     }
 
-    .service-card:hover::before {
+    .problem-card:hover::before {
       opacity: 1;
     }
 
-    .service-icon {
+    .problem-icon {
       font-family: var(--font-mono);
       font-size: 0.7rem;
       color: var(--accent);
@@ -387,47 +387,69 @@
       background: var(--accent-dim);
     }
 
-    .service-card h3 {
+    .problem-card h3 {
       font-family: var(--font-mono);
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
-    .service-card p {
+    .problem-card .problem-question {
+      font-style: italic;
       color: var(--text-secondary);
       font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .problem-card .problem-answer {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
       line-height: 1.7;
     }
 
-    /* === PROJECTS === */
-    .projects-filter {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
+    .problem-card .problem-answer strong {
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
-    .filter-btn {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 0.5rem 1rem;
-      background: transparent;
-      color: var(--text-secondary);
+    /* === PROCESS === */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .process-step {
+      padding: 2rem 1.5rem;
       border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.3s;
+      background: var(--bg-card);
+      position: relative;
     }
 
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: var(--accent-dim);
-      border-color: var(--accent);
-      color: var(--accent);
+    .process-step .step-number {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-dim);
+      margin-bottom: 1rem;
+      display: block;
     }
 
+    .process-step h3 {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-step p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* === PROOF / CASE STUDIES === */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -467,6 +489,14 @@
       color: var(--text-primary);
       margin-bottom: 0.5rem;
       line-height: 1.4;
+    }
+
+    .project-card .project-outcome {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
     }
 
     .project-card p {
@@ -744,6 +774,10 @@
         grid-template-columns: 1fr;
       }
 
+      .problems-grid {
+        grid-template-columns: 1fr;
+      }
+
       section {
         padding: 60px 1.5rem;
       }
@@ -764,10 +798,10 @@
     <nav>
       <a href="#" class="nav-logo">MDH.PhD</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#problems">Problems I Solve</a></li>
+        <li><a href="#proof">Proof</a></li>
         <li><a href="#credentials">Background</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Hire Me</a></li>
       </ul>
       <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">&#9776;</button>
     </nav>
@@ -775,18 +809,20 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <div class="hero-tag">Computational Economist &amp; AI Engineer</div>
-        <h1>I build simulations that turn <span class="accent">complex data</span> into decisions.</h1>
-        <p class="hero-description">From national-scale economic models to AI-powered analytics &mdash; I help
-          governments, organizations, and businesses understand the systems they operate in.</p>
+        <div class="hero-tag">Economist &bull; AI Engineer &bull; Consultant</div>
+        <h1>You have a <span class="accent">hard problem.</span><br>I build the system that solves it.</h1>
+        <p class="hero-description">I'm Deluair Hossen &mdash; a Ph.D. economist and engineer who builds simulations, AI
+          systems, and data platforms for governments, multilateral organizations, and businesses. I've worked with
+          Bangladesh Bank, the World Bank, the IMF, and the USDA. If your problem involves economics, policy, trade, or
+          data at scale &mdash; I can help.</p>
         <div class="hero-ctas">
-          <a href="#work" class="btn-primary">View My Work</a>
-          <a href="#contact" class="btn-secondary">Get In Touch</a>
+          <a href="#contact" class="btn-primary">Discuss Your Problem</a>
+          <a href="#proof" class="btn-secondary">See Past Work</a>
         </div>
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-number">30+</span>
-            <span class="stat-label">Simulations Built</span>
+            <span class="stat-label">Problems Solved</span>
           </div>
           <div class="stat-item">
             <span class="stat-number">10+</span>
@@ -794,93 +830,161 @@
           </div>
           <div class="stat-item">
             <span class="stat-number">$925K+</span>
-            <span class="stat-label">Research Funding</span>
+            <span class="stat-label">Research Grants</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">6</span>
-            <span class="stat-label">Publications</span>
+            <span class="stat-number">170M</span>
+            <span class="stat-label">People Impacted</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services">
+    <!-- PROBLEMS I SOLVE -->
+    <section id="problems">
       <div class="section-header reveal">
-        <span class="section-tag">What I Do</span>
-        <h2 class="section-title">Services</h2>
-        <p class="section-subtitle">Deep analytical capabilities across economics, AI, and geospatial systems.</p>
+        <span class="section-tag">Problems I Solve</span>
+        <h2 class="section-title">You bring the question. I build the answer.</h2>
+        <p class="section-subtitle">These are the kinds of problems clients and collaborators bring to me.</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card reveal">
-          <div class="service-icon">01</div>
-          <h3>Economic & Policy Simulation</h3>
-          <p>National-scale modeling of trade flows, fiscal policy, employment dynamics, and sector-specific
-            forecasting. Built for governments and development organizations making high-stakes decisions.</p>
+      <div class="problems-grid">
+
+        <div class="problem-card reveal">
+          <div class="problem-icon">POLICY</div>
+          <h3>Economic & Policy Decisions</h3>
+          <p class="problem-question">"We need to understand the impact of this trade policy before we commit billions."</p>
+          <p class="problem-answer">I build <strong>national-scale simulations</strong> &mdash; trade flow models, fiscal
+            impact analysis, employment forecasting, and sector projections &mdash; so you make policy decisions with
+            evidence, not guesswork. Built for governments and development organizations.</p>
         </div>
-        <div class="service-card reveal">
-          <div class="service-icon">02</div>
-          <h3>Trade & Financial Analytics</h3>
-          <p>Import/export prediction using ensemble methods (Prophet + XGBoost), macro risk assessment, exchange rate
-            modeling, and supply chain resilience analysis. Grounded in central banking experience.</p>
+
+        <div class="problem-card reveal">
+          <div class="problem-icon">TRADE</div>
+          <h3>Trade & Financial Risk</h3>
+          <p class="problem-question">"Our trade data is scattered across 20 sources. We can't see what's coming."</p>
+          <p class="problem-answer">I unify data and build <strong>predictive trade analytics</strong> &mdash; import/export
+            forecasting, exchange rate pass-through models, supply chain risk analysis, and commodity intelligence.
+            Grounded in my years at Bangladesh's central bank.</p>
         </div>
-        <div class="service-card reveal">
-          <div class="service-icon">03</div>
-          <h3>AI / ML Engineering</h3>
-          <p>Custom machine learning pipelines, intelligent dashboards, autonomous agent systems, and AI-powered
-            monitoring platforms. From prototype to production.</p>
+
+        <div class="problem-card reveal">
+          <div class="problem-icon">AI</div>
+          <h3>AI & Automation Systems</h3>
+          <p class="problem-question">"We're drowning in data but can't extract insight fast enough."</p>
+          <p class="problem-answer">I design and ship <strong>production AI systems</strong> &mdash; ML pipelines,
+            multi-agent intelligence platforms, autonomous monitoring, and AI-powered dashboards. From prototype to
+            deployed product.</p>
         </div>
-        <div class="service-card reveal">
-          <div class="service-icon">04</div>
-          <h3>Geospatial & Climate Analysis</h3>
-          <p>Spatial economic modeling, climate resilience simulation, agricultural yield forecasting, and natural
-            resource management. GIS-integrated decision support systems.</p>
+
+        <div class="problem-card reveal">
+          <div class="problem-icon">GEO</div>
+          <h3>Climate & Geospatial Analysis</h3>
+          <p class="problem-question">"How will climate change affect agricultural yields in our region over the next
+            decade?"</p>
+          <p class="problem-answer">I build <strong>spatial economic models</strong> &mdash; climate resilience
+            simulations, crop yield forecasting, natural resource management systems, and GIS-integrated decision
+            platforms.</p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="problem-icon">DATA</div>
+          <h3>Data Platforms at Scale</h3>
+          <p class="problem-question">"Our country's public data is trapped in PDFs and spreadsheets nobody uses."</p>
+          <p class="problem-answer">I build <strong>full-stack data platforms</strong> from scratch &mdash; interactive
+            dashboards, open data portals, real-time indicators, and public-facing tools serving millions. I've done it
+            for 170M+ people.</p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="problem-icon">RESEARCH</div>
+          <h3>Applied Research & Publications</h3>
+          <p class="problem-question">"We need rigorous, publishable analysis to support our funding proposal."</p>
+          <p class="problem-answer">I deliver <strong>peer-reviewed research</strong> &mdash; econometric analysis, grant
+            writing, and academic publications. Co-PI on $925K+ in USDA grants. 6 published papers, 4 working
+            papers.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section id="process">
+      <div class="section-header reveal">
+        <span class="section-tag">How I Work</span>
+        <h2 class="section-title">From problem to deployed solution</h2>
+      </div>
+      <div class="process-grid reveal">
+        <div class="process-step">
+          <span class="step-number">01</span>
+          <h3>Diagnose</h3>
+          <p>We talk. I understand the real problem &mdash; not just the symptoms. I map the data landscape, constraints,
+            and what success looks like.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">02</span>
+          <h3>Design</h3>
+          <p>I architect the solution &mdash; what model, what data, what technology. You get a clear plan before any code
+            is written.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">03</span>
+          <h3>Build</h3>
+          <p>I build the simulation, the pipeline, the dashboard, the platform. Full-stack, end-to-end. I don't hand off
+            half-finished work.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-number">04</span>
+          <h3>Deliver</h3>
+          <p>You get a working system &mdash; deployed, documented, and ready. Plus the knowledge transfer so your team can
+            maintain it.</p>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="work">
+    <!-- PROOF -->
+    <section id="proof">
       <div class="section-header reveal">
-        <span class="section-tag">Portfolio</span>
-        <h2 class="section-title">Featured Work</h2>
-        <p class="section-subtitle">Three flagship platforms &mdash; live, open-source, and built end-to-end.</p>
+        <span class="section-tag">Proof</span>
+        <h2 class="section-title">Platforms I've built &mdash; live, open-source, end-to-end</h2>
+        <p class="section-subtitle">Not mockups. Not proposals. Working systems serving real users right now.</p>
       </div>
 
-      <div class="projects-grid reveal" id="projectsGrid">
+      <div class="projects-grid reveal">
 
-        <a href="https://bdfacts.org" target="_blank" class="project-card featured" data-category="featured">
+        <a href="https://bdfacts.org" target="_blank" class="project-card featured">
           <span class="project-link-icon">&nearr;</span>
-          <div class="project-domain">Live Platform &mdash; Open Data</div>
+          <div class="project-domain">Problem &mdash; Open Data</div>
           <h3>BDFacts &mdash; Bangladesh Open Data Platform</h3>
-          <p>Transforms scattered government data into a beautiful, interactive platform for 170M+ citizens. 60+
-            interactive pages, 31 life simulators, 41 sector projections, 7 economic models, 150+ indicators, and
-            real-time data clock. Bangla-first bilingual. Free, no ads, no login.</p>
+          <p class="project-outcome">170M+ citizens served &bull; 60+ interactive pages &bull; 7 economic models</p>
+          <p>Government data was scattered across hundreds of PDFs and spreadsheets. I built a single platform with 31
+            life simulators, 41 sector projections, 150+ indicators, and a real-time data clock. Bangla-first bilingual.
+            Free, no ads, no login.</p>
           <div class="project-tags"><span>React 19</span><span>Vite
               7</span><span>FastAPI</span><span>Python</span><span>PWA</span><span>Framer Motion</span><span>Live</span>
           </div>
         </a>
 
-        <a href="https://tradeweave.org" target="_blank" class="project-card featured" data-category="featured">
+        <a href="https://tradeweave.org" target="_blank" class="project-card featured">
           <span class="project-link-icon">&nearr;</span>
-          <div class="project-domain">Live Platform &mdash; Trade Intelligence</div>
+          <div class="project-domain">Problem &mdash; Trade Intelligence</div>
           <h3>TradeWeave &mdash; Global Trade Analytics</h3>
-          <p>Free, open-source trade analytics platform covering 238 countries and 5,000+ products (HS 6-digit).
-            Interactive dashboards, 7 economic models (Gravity, RCA), 3D globe visualization, commodity intelligence,
-            and 60+ years of agricultural trade data. ~17.3M rows of data.</p>
+          <p class="project-outcome">238 countries &bull; 5,000+ products &bull; 17.3M rows of data</p>
+          <p>Trade analysts had no free, comprehensive tool. I built one covering 60+ years of data with 7 economic
+            models (Gravity, RCA), 3D globe visualization, commodity intelligence, and HS 6-digit product
+            classification.</p>
           <div class="project-tags"><span>Next.js
               15</span><span>TypeScript</span><span>D3.js</span><span>Three.js</span><span>SQLite</span><span>Tailwind</span><span>Live</span>
           </div>
         </a>
 
-        <a href="https://election26bnp-1.netlify.app" target="_blank" class="project-card featured"
-          data-category="featured">
+        <a href="https://election26bnp-1.netlify.app" target="_blank" class="project-card featured">
           <span class="project-link-icon">&nearr;</span>
-          <div class="project-domain">Live Platform &mdash; Election Intelligence</div>
+          <div class="project-domain">Problem &mdash; Election Intelligence</div>
           <h3>Bangladesh 2026 Election Strategic Hub</h3>
-          <p>Real-time election intelligence for all 300 constituencies. Multi-agent AI system (Gemini 3 Flash)
-            generating daily intel with specialized election and media agents. Interactive SVG constituency map, live
-            seat projections, scenario modeling, and strategic command center.</p>
+          <p class="project-outcome">300 constituencies &bull; Multi-agent AI &bull; Daily intelligence</p>
+          <p>Election strategists needed real-time constituency intelligence. I built a multi-agent AI system (Gemini
+            Flash) generating daily intel with specialized election and media agents, interactive maps, live seat
+            projections, and scenario modeling.</p>
           <div class="project-tags"><span>React</span><span>Supabase</span><span>Gemini AI</span><span>Framer
               Motion</span><span>Tailwind</span><span>Live</span></div>
         </a>
@@ -896,9 +1000,10 @@
     <!-- CREDENTIALS -->
     <section id="credentials">
       <div class="section-header reveal">
-        <span class="section-tag">Background</span>
-        <h2 class="section-title">Credentials</h2>
-        <p class="section-subtitle">A decade bridging central banking, academic research, and computational systems.</p>
+        <span class="section-tag">Why Me</span>
+        <h2 class="section-title">A decade solving real-world problems</h2>
+        <p class="section-subtitle">Central banking, multilateral advisory, academic research, and full-stack
+          engineering. Not many people have all four.</p>
       </div>
 
       <div class="credentials-grid reveal">
@@ -907,39 +1012,42 @@
           <h3>Postdoctoral Research Associate</h3>
           <p class="cred-org">University of Tennessee &mdash; Agricultural & Resource Economics</p>
           <p class="cred-detail">International trade analysis, food security, macroeconomic modeling. Co-PI on $925K+
-            USDA grants.</p>
+            USDA grants. 6 publications.</p>
         </div>
         <div class="credential-card">
           <div class="cred-period">2016 &mdash; 2021</div>
           <h3>Deputy Director</h3>
           <p class="cred-org">Bangladesh Bank (Central Bank)</p>
-          <p class="cred-detail">Banking regulation & policy. Direct experience shaping financial policy for a nation of
-            170M people.</p>
+          <p class="cred-detail">Banking regulation & policy for a nation of 170M. Direct experience shaping monetary and
+            financial systems at national scale.</p>
         </div>
         <div class="credential-card">
           <div class="cred-period">2013 &mdash; 2016</div>
           <h3>Assistant Director</h3>
           <p class="cred-org">Bangladesh Financial Intelligence Unit</p>
-          <p class="cred-detail">Financial intelligence, anti-money laundering, and regulatory compliance.</p>
+          <p class="cred-detail">Financial intelligence, anti-money laundering, compliance systems, and regulatory
+            enforcement.</p>
         </div>
         <div class="credential-card">
-          <div class="cred-period">Ph.D.</div>
-          <h3>Economics</h3>
-          <p class="cred-org">University of Tennessee</p>
-          <p class="cred-detail">Garrison Award for Teaching Excellence. 6 publications, 4 working papers.</p>
+          <div class="cred-period">Ph.D. Economics</div>
+          <h3>University of Tennessee</h3>
+          <p class="cred-org">Financial frictions, shipping frequency, exchange rate pass-through</p>
+          <p class="cred-detail">Garrison Award for Teaching Excellence. Dissertation on real-world trade
+            dynamics.</p>
         </div>
         <div class="credential-card">
-          <div class="cred-period">B.Sc.</div>
-          <h3>Chemical Engineering</h3>
-          <p class="cred-org">BUET — Bangladesh University of Engineering & Technology</p>
-          <p class="cred-detail">Technical foundation bridging engineering systems thinking with economic analysis.</p>
+          <div class="cred-period">B.Sc. Chemical Engineering</div>
+          <h3>BUET</h3>
+          <p class="cred-org">Bangladesh University of Engineering & Technology</p>
+          <p class="cred-detail">Engineering-first thinking applied to economic systems. Systems design from first
+            principles.</p>
         </div>
         <div class="credential-card">
-          <div class="cred-period">Collaborations</div>
+          <div class="cred-period">Advisory</div>
           <h3>World Bank & IMF</h3>
-          <p class="cred-org">International Development</p>
-          <p class="cred-detail">Contributed to policy analysis and economic advisory work with multilateral
-            organizations.</p>
+          <p class="cred-org">Multilateral Organizations</p>
+          <p class="cred-detail">Policy analysis and economic advisory work at the highest levels of international
+            development.</p>
         </div>
       </div>
     </section>
@@ -947,8 +1055,8 @@
     <!-- TECH -->
     <section id="tech">
       <div class="section-header reveal">
-        <span class="section-tag">Stack</span>
-        <h2 class="section-title">Technical Skills</h2>
+        <span class="section-tag">Tools</span>
+        <h2 class="section-title">I use whatever solves the problem</h2>
       </div>
       <div class="tech-grid reveal">
         <span class="tech-tag">Python</span>
@@ -964,13 +1072,19 @@
         <span class="tech-tag">Pandas</span>
         <span class="tech-tag">GeoPandas</span>
         <span class="tech-tag">ArcGIS</span>
-        <span class="tech-tag">Streamlit</span>
-        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Next.js</span>
         <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">D3.js</span>
+        <span class="tech-tag">Three.js</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">Streamlit</span>
         <span class="tech-tag">Azure</span>
         <span class="tech-tag">AWS</span>
         <span class="tech-tag">GCP</span>
         <span class="tech-tag">Docker</span>
+        <span class="tech-tag">Supabase</span>
         <span class="tech-tag">Git</span>
       </div>
     </section>
@@ -978,10 +1092,10 @@
     <!-- CONTACT -->
     <section id="contact" class="contact-section">
       <div class="section-header reveal">
-        <span class="section-tag">Let's Work Together</span>
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Available for consulting engagements, collaborative research, and contract analytics
-          work.</p>
+        <span class="section-tag">Let's Talk</span>
+        <h2 class="section-title">Have a problem? Let's solve it.</h2>
+        <p class="section-subtitle">Available for consulting, contract work, collaborative research, and advisory
+          engagements. I respond within 24 hours.</p>
       </div>
       <div class="contact-links reveal">
         <a href="mailto:mhossen@tennessee.edu" class="contact-link">
@@ -1035,9 +1149,6 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     revealElements.forEach(el => revealObserver.observe(el));
-
-
-
 
     // === MOBILE MENU ===
     const menuBtn = document.getElementById('menuBtn');
