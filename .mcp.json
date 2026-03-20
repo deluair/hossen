@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "telegram": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@iflow-mcp/telegram-mcp-server"],
+      "env": {
+        "TELEGRAM_API_ID": "",
+        "TELEGRAM_API_HASH": ""
+      }
+    }
+  }
+}
